@@ -2,7 +2,7 @@ import type { Alien } from "../types";
 
 import heatblast from "../assets/alliens/heatblast.png";
 import fourarms from "../assets/alliens/fourarms.png";
-import upgrade from "../assets/alliens/fourarms.png";
+import upgrade from "../assets/alliens/upgrade-alien.png";
 import diamondhead from "../assets/alliens/diamondhead.png";
 import xlr8 from "../assets/alliens/xlr8.png";
 import ghostfreak from "../assets/alliens/ghostfreak.png";

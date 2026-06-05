@@ -8,26 +8,21 @@ gsap.registerPlugin(ScrollTrigger);
 export function useLenis() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.6,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
 
-    // sync lenis scroll position with gsap scrolltrigger
     lenis.on("scroll", ScrollTrigger.update);
 
-    // connect lenis to gsap's ticker so they run on sync
     gsap.ticker.add((time) => {
-      lenis.raf(time * 100);
+      lenis.raf(time * 1000);
     });
-
-    // prevent gsap from using its own requestAnimationFrame since lenis is driving the loop
 
     gsap.ticker.lagSmoothing(0);
 
     return () => {
       lenis.destroy();
-      gsap.ticker.remove(lenis.raf);
     };
   }, []);
 }

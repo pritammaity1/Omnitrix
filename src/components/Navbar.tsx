@@ -2,25 +2,26 @@ import { motion } from "framer-motion";
 
 export default function Navbar() {
   return (
-    <motion.div
+    <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-16 py-6 backdrop-blur-sm bg-void/30 "
+      className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-[#071106] to-transparent px-16 pt-10 pb-8"
     >
-      <h1 className="font-bebas text-3xl text-omnitrix tracking-[0.15em]">
-        OMNITRIX
-      </h1>
-
-      {/* center archive label */}
-
-      <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
-        <span className="font-space text-sm text-text-primary uppercase tracking-[0.2em] font-medium">
-          Archive
+      <div className="flex items-center justify-between max-w-[1440px] mx-auto">
+        <span className="font-bebas text-4xl text-omnitrix tracking-widest cursor-pointer transition-transform active:scale-95">
+          OMNITRIX
         </span>
-        <div className="w-8 h-[2px] bg-omnitrix" />
+
+        <a
+          href="#"
+          className="font-bebas text-2xl text-omnitrix tracking-[0.08em] border-b-2 border-omnitrix pb-1 hover:text-[#00ff70] transition-colors duration-300"
+        >
+          ARCHIVE
+        </a>
+
+        <div className="w-[140px]" />
       </div>
-      <div className="w-[120px]" />
-    </motion.div>
+    </motion.nav>
   );
 }
